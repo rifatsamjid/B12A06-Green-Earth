@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
-<body>
+<body class="bg-green-50">
     <header>
         <!-- nav section -->
         <section>
@@ -57,7 +57,6 @@
             </div>
         </section>
         <!-- banner section -->
-        <!-- bg-[url('/images/bg.jpg')] -->
         <section
             class="bg-[#cff0dc] h-96 bg-[url('./assets/hero-leaf1.png')] p-2  bg-contain  w-full md:bg-[url('./assets/hero-leaf1.png'),url('./assets/hero-leaf2.png')] [background-position:left_center,right_center] bg-no-repeat flex flex-col justify-center items-center">
             <div class=" space-y-3 text-center">
@@ -70,12 +69,34 @@
             </div>
         </section>
     </header>
-    <main>
+    <main class="mt-16">
+        <h1 class="text-xl font-semibold text-center mb-9">
+            Choose Your Trees
+        </h1>
+        <div class="w-11/12 flex justify-between gap-3 mx-auto">
+            <!-- categories -->
+            <section class=" w-1/6 h-full">
+                <h2 class="text-xl font-semibold">Categories</h2>
+                <div id="categories-container" class="space-y-3">
 
+                </div>
+            </section>
+            <!-- card container -->
+            <section class="flex-1">
+                <div id="card-container">
+
+
+                </div>
+            </section>
+            <section class="w-1/6 bg-red-700 h-80 w-80">
+
+            </section>
+        </div>
     </main>
     <footer>
 
     </footer>
+    <script src="script/script.js"></script>
 </body>
 
 </html>
