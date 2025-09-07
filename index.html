@@ -73,7 +73,7 @@
         <h1 class="text-xl font-semibold text-center mb-9">
             Choose Your Trees
         </h1>
-        <div class="w-11/12 flex justify-between gap-3 mx-auto">
+        <div class="w-11/12 flex flex-col gap-3 mx-auto md:flex-row justify-between">
             <!-- categories -->
             <section class=" w-1/6 h-full">
                 <h2 class="text-xl font-semibold">Categories</h2>
@@ -83,12 +83,14 @@
             </section>
             <!-- card container -->
             <section class="flex-1">
-                <div id="card-container">
+                <div id="card-container" class=" grid grid-cols-1 md:grid-cols-3 gap-3">
+
+
 
 
                 </div>
             </section>
-            <section class="w-1/6 bg-red-700 h-80 w-80">
+            <section class="w-1/6 bg-red-700 h-80">
 
             </section>
         </div>
