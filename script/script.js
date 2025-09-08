@@ -22,10 +22,6 @@ const handleActive = (btn) => {
     allButtons.forEach(b => b.classList.remove("active"))
     if (btn) btn.classList.add("active")
 }
-// const remove = () => {
-//     const lessonButton = document.querySelectorAll(".lesson-remove")
-//     lessonButton.forEach(btn => btn.classList.remove("active"))
-// }
 
 // all trees card
 const displayAllCard = (cards) => {
@@ -50,7 +46,7 @@ const displayAllCard = (cards) => {
                                     ৳<span>${card.price}</span>
                                 </p>
                             </div>
-                            <button class="w-full font-semibold text-white py-1 bg-green-500 px-3 rounded-xl">
+                            <button onclick="addToCart('${card.name}', ${card.price})" class="w-full font-semibold text-white py-1 bg-green-500 px-3 rounded-xl">
                                 Add to Cart
                             </button>
                         </div> 
@@ -67,11 +63,6 @@ const loadAllCategories = (setActive = true) => {
         .then(res => res.json())
         .then(data => {
             displayAllCard(data.plants)
-
-            // const clickBtn = document.querySelector(`button[onclick="loadAllCategories()"]`)
-            // if (clickBtn) {
-            //     clickBtn.classList.add("active")
-            // }
             if (setActive) {
                 const clickBtn = document.querySelector(`button[onclick="loadAllCategories()"]`)
                 handleActive(clickBtn)
@@ -107,11 +98,6 @@ const loadCategoriesCard = async (id) => {
     const res = await fetch(url)
     const details = await res.json()
     displayOtherCards(details.plants)
-    // const clickBtn = document.getElementById(`cardBtn-${details.category_name}`)
-    // if (clickBtn) {
-    //     clickBtn.classList.add("active")
-    // }
-    // console.log(details.plants[0])
     const clickBtn = document.querySelector(`button[onclick="loadCategoriesCard('${id}')"]`)
     handleActive(clickBtn)
 
@@ -140,7 +126,7 @@ const displayOtherCards = (cards) => {
                                     ৳<span>${card.price}</span>
                                 </p>
                             </div>
-                            <button class="w-full text-white font-semibold py-1 bg-green-500 px-3 rounded-xl">
+                            <button onclick="addToCart('${card.name}', ${card.price})" class="w-full text-white font-semibold py-1 bg-green-500 px-3 rounded-xl">
                                 Add to Cart
                             </button>
                         </div>
@@ -168,6 +154,51 @@ const displayLesson = (dataName) => {
         categoriesContainer.appendChild(btnDiv)
     })
 }
+
+// Cart er data store
+let cart = [];
+
+const displayCart = () => {
+    const cartContainer = document.getElementById("cart-items");
+    const totalPriceEl = document.getElementById("cart-total");
+    cartContainer.innerHTML = "";
+    let total = 0;
+    cart.forEach((item, index) => {
+        total += item.price * item.quantity;
+        const div = document.createElement("div");
+        div.classList.add("flex", "justify-between", "space-y-3", "my-2", "rounded-xl", "bg-green-50", "p-3");
+        div.innerHTML = `
+            <div>
+                <h2 class="font-semibold">${item.name}</h2>
+                <p class="text-[#1F2937]">৳<span>${item.price} x ${item.quantity}</span></p>
+            </div>
+            <span style="cursor:pointer" onclick="removeFromCart(${index})">
+                <i class="fa-solid fa-xmark"></i>
+            </span>
+        `;
+        cartContainer.appendChild(div);
+    });
+    totalPriceEl.innerText = total;
+}
+
+
+const addToCart = (name, price) => {
+
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+        existing.quantity += 1;
+    } else {
+        cart.push({ name, price, quantity: 1 }); // 
+    }
+    displayCart();
+}
+const removeFromCart = (index) => {
+    cart.splice(index, 1); //
+    displayCart();
+}
+
+
+
 
 
 loadCard()
