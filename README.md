@@ -10,13 +10,13 @@
 
 #### 1) var
 
-#### 1. Scope: Function-scoped
+#### 1. **Scope:** Function-scoped
 
-#### 2. Hoisting: Hoisted to the top of its scop and initialized as undefined.
+#### 2. **Hoisting:** Hoisted to the top of its scop and initialized as undefined.
 
-#### 3. Reassignment: Can be reassigned and re-declared in the same scope.
+#### 3. **Reassignment:** Can be reassigned and re-declared in the same scope.
 
-#### 4.Problematic because it can create bugs due to hoisting and re-declaration.
+#### 4. **Problem:** Problematic because it can create bugs due to hoisting and re-declaration.
 
 ---
 
