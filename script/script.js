@@ -31,7 +31,7 @@ const displayAllCard = (cards) => {
         const cardDiv = document.createElement("div")
         cardDiv.innerHTML = `
                         <div class="shadow-2xl rounded-xl bg-white p-2 space-y-2">
-                                <img class="rounded-xl h-96 w-full bg-cover" src=${card.image}  alt="">
+                                <img class="rounded-xl h-96 w-full bg-contain" src=${card.image}  alt="">
                             <h1  onclick="loadDetail(${card.id})" class="font-semibold">
                                 ${card.name}
                             </h1>
@@ -186,9 +186,12 @@ const addToCart = (name, price) => {
 
     const existing = cart.find(item => item.name === name);
     if (existing) {
+
         existing.quantity += 1;
+        alert(`${name} Its quantity has increased by 1!`);
     } else {
-        cart.push({ name, price, quantity: 1 }); // 
+        cart.push({ name, price, quantity: 1 });
+        alert(`${name} add to cart!`);
     }
     displayCart();
 }
