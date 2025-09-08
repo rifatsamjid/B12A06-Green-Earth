@@ -1,7 +1,12 @@
 ---
-#### 7) Create a README file to answer the following question-
-#### var,let,const are all use to declare variables,but they behave different of scope,hoisting and reassignment.
+#### 1) answer the following question-
 ---
+
+#### 1) What is the difference between var, let, and const?
+
+---
+
+#### var,let,const are all use to declare variables,but they behave different of scope,hoisting and reassignment.
 
 #### 1) var
 
@@ -13,7 +18,7 @@
 
 #### 4.Problematic because it can create bugs due to hoisting and re-declaration.
 
-#### 1) What is the difference between var, let, and const?
+---
 
 #### 2) What is the difference between map(), forEach(), and filter()?
 
