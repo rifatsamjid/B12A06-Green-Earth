@@ -20,6 +20,16 @@
 
 ---
 
+#### 2) Let
+
+#### 1) Scope: Block-scoped
+
+#### 2) Hoisting: Hoisted but not initialized(can’t use it before declaration)
+
+#### 3) Reassignment: Can be reassigned, but not re-declared in the same scope.
+
+---
+
 #### 2) What is the difference between map(), forEach(), and filter()?
 
 #### 3) What are arrow functions in ES6?
