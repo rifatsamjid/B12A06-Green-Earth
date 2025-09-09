@@ -319,4 +319,100 @@ display({ name: "Rifat", age: 22 });
 - Supports **default values, renaming, and nesting**.
 - Makes code **cleaner and more readable**.
 
+---
+
 #### 5) Explain template literals in ES6. How are they different from string concatenation?
+
+---
+
+# JavaScript Template Literals (ES6)
+
+Template literals (also called **template strings**) were introduced in **ES6**.  
+They provide a more powerful and readable way to work with strings compared to the old string concatenation (`+`).
+
+---
+
+## Syntax
+
+Template literals use **backticks** (`` ` ``) instead of quotes.
+
+```js
+const name = "Rifat";
+
+const str1 = "Hello, " + name + "!";
+
+const str2 = `Hello, ${name}!`;
+
+console.log(str1);
+console.log(str2);
+```
+
+---
+
+## 🚀 Key Features
+
+### 1. **String Interpolation**
+
+Insert variables and expressions directly inside `${ }`.
+
+```js
+const a = 5;
+const b = 10;
+
+console.log(`The sum of ${a} and ${b} is ${a + b}`);
+```
+
+---
+
+### 2. **Multi-line Strings**
+
+No need for `\n` or string concatenation.
+
+```js
+const message = `
+This is line 1
+This is line 2
+This is line 3
+`;
+
+console.log(message);
+```
+
+---
+
+### 3. **Expression Evaluation**
+
+You can use any valid JavaScript expression inside `${ }`.
+
+```js
+const items = ["apple", "mango", "banana"];
+console.log(`I have ${items.length} fruits.`);
+```
+
+---
+
+### 4. **Tagged Templates (Advanced)**
+
+You can write a function to process template literals.
+
+```js
+function highlight(strings, ...values) {
+  return strings.reduce((result, str, i) =>
+    `${result}${str}<b>${values[i] || ""}</b>`, ""
+  );
+}
+
+const user = "Rifat";
+const age = 22;
+
+console.log(highlight`My name is ${user} and I am ${age} years old.`);
+
+
+---
+
+##  Summary
+- Use **template literals** for cleaner, readable, and more powerful string handling.
+- They support **multi-line strings**, **string interpolation**, and even **custom processing** with tagged templates.
+- Much better than old-school string concatenation with `+`.
+
+```
