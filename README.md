@@ -68,11 +68,9 @@
 
 ---
 
-#### 3) What are arrow functions in ES6?
+## 3) What are arrow functions in ES6?
 
 ---
-
-# JavaScript Arrow Functions (ES6)
 
 Arrow functions (`=>`) were introduced in **ES6 (ECMAScript 2015)** to make writing functions shorter and cleaner.
 
@@ -169,11 +167,9 @@ const User = (name) => {
 
 ## Arrow functions = **shorter syntax + lexical `this`** = perfect for modern JavaScript.
 
-#### 4) How does destructuring assignment work in ES6?
+## 4) How does destructuring assignment work in ES6?
 
 ---
-
-# JavaScript Destructuring Assignment (ES6)
 
 **Destructuring assignment** is an ES6 feature that allows you to **unpack values** from arrays or properties from objects into separate variables in a clean and concise way.
 
@@ -303,11 +299,9 @@ display({ name: "Rifat", age: 22 });
 
 ---
 
-#### 5) Explain template literals in ES6. How are they different from string concatenation?
+## 5) Explain template literals in ES6. How are they different from string concatenation?
 
 ---
-
-# JavaScript Template Literals (ES6)
 
 Template literals (also called **template strings**) were introduced in **ES6**.  
 They provide a more powerful and readable way to work with strings compared to the old string concatenation (`+`).
