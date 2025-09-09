@@ -185,8 +185,138 @@ const User = (name) => {
 
 ## Summary
 
-Arrow functions = **shorter syntax + lexical `this`** → perfect for modern JavaScript.
+## Arrow functions = **shorter syntax + lexical `this`** = perfect for modern JavaScript.
 
 #### 4) How does destructuring assignment work in ES6?
+
+---
+
+# JavaScript Destructuring Assignment (ES6)
+
+**Destructuring assignment** is an ES6 feature that allows you to **unpack values** from arrays or properties from objects into separate variables in a clean and concise way.
+
+---
+
+## Array Destructuring
+
+Extract values from an array into variables.
+
+```js
+const numbers = [10, 20, 30];
+
+const a = numbers[0];
+const b = numbers[1];
+
+const [x, y, z] = numbers;
+
+console.log(x);
+console.log(y);
+console.log(z);
+```
+
+### Skipping Values
+
+```js
+const [first, , third] = [1, 2, 3];
+console.log(first);
+console.log(third);
+```
+
+### Default Values
+
+```js
+const [p = 100, q = 200] = [10];
+console.log(p);
+console.log(q);
+```
+
+---
+
+## Object Destructuring
+
+Extract properties from objects into variables.
+
+```js
+const person = {
+  name: "Rifat",
+  age: 22,
+  country: "Bangladesh",
+};
+
+const name1 = person.name;
+const age1 = person.age;
+
+const { name, age, country } = person;
+
+console.log(name);
+console.log(age);
+console.log(country);
+```
+
+### Renaming Variables
+
+```js
+const { name: fullName, age: years } = person;
+console.log(fullName);
+console.log(years);
+```
+
+### Default Values
+
+```js
+const { city = "Dhaka" } = person;
+console.log(city);
+```
+
+---
+
+## Nested Destructuring
+
+You can destructure inside nested objects/arrays.
+
+```js
+const user = {
+  id: 1,
+  profile: {
+    username: "rifat123",
+    info: {
+      email: "rifat@mail.com",
+    },
+  },
+};
+
+const {
+  profile: {
+    username,
+    info: { email },
+  },
+} = user;
+
+console.log(username);
+console.log(email);
+```
+
+---
+
+## Function Parameter Destructuring
+
+Destructuring works directly in function parameters.
+
+```js
+function display({ name, age }) {
+  console.log(`Name: ${name}, Age: ${age}`);
+}
+
+display({ name: "Rifat", age: 22 });
+```
+
+---
+
+## Summary
+
+- **Array Destructuring:** Extract values by position.
+- **Object Destructuring:** Extract values by property name.
+- Supports **default values, renaming, and nesting**.
+- Makes code **cleaner and more readable**.
 
 #### 5) Explain template literals in ES6. How are they different from string concatenation?
